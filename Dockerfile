@@ -4,4 +4,4 @@ RUN apt-get update && apt-get install -y git make cmake g++ nodejs glslang-tools
 RUN git clone --depth=1 --recurse-submodules --shallow-submodules https://github.com/google/swiftshader.git && mkdir swbuild && cd swbuild && cmake ../swiftshader && make -j2
 
 FROM scratch
-COPY --from=dev-build /build/swbuild/Android /swiftshader
+COPY --from=dev-build /build/swbuild /swiftshader
